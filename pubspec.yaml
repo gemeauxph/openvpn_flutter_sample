@@ -28,3 +28,4 @@ flutter:
         pluginClass: OpenVPNFlutterPlugin
       ios:
         pluginClass: OpenVPNFlutterPlugin
+
