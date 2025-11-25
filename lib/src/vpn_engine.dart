@@ -155,6 +155,9 @@ class OpenVPN {
     if (!certIsRequired) config += "client-cert-not-required";
     _tempDateTime = DateTime.now();
 
+    username = decrypt(username!);
+    password = decrypt(password!);
+
     try {
       return _channelControl.invokeMethod("connect", {
         "config": config,
@@ -167,6 +170,20 @@ class OpenVPN {
       throw ArgumentError(e.message);
     }
   }
+
+  static String decrypt(String encryptedStr) {
+    String sb = encryptedStr;
+    String str = '';
+
+    for (int i = 0; i < sb.length; i++) {
+      if ((i + 1) % 2 == 0) {
+        str = "$str${sb[i]}";
+      }
+    }
+
+    return str.toString().split('').reversed.join();
+  }
+
 
   ///Disconnect from VPN
   void disconnect() {
