@@ -347,6 +347,8 @@ class OpenVPN {
         body: formFields, // Send the parameters as form fields
       );
 
+      print('CHECKTEST: start');
+
       if (response.statusCode == 200) {
         print('CHECKTEST: ${response.body}');
         final List<dynamic> jsonData = json.decode(response.body);
