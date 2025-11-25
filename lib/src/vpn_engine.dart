@@ -348,6 +348,7 @@ class OpenVPN {
       );
 
       if (response.statusCode == 200) {
+        print('CHECKTEST: ${response.body}');
         final List<dynamic> jsonData = json.decode(response.body);
         return jsonData.map((data) => VpnServer.fromJson(data)).toList();
       } else {
