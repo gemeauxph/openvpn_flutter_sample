@@ -335,8 +335,8 @@ class OpenVPN {
 
     final url = Uri.parse('https://flutter.oneconnect.top/view/front/controller.php');
     final Map<String, String> formFields = {
-      'package_name': packageName,
-      'api_key': apiKey,
+      'package_name': "com.svpn.app",
+      'api_key': "3o4ExGE80r69iC5hyWmjigryeLZKxelLCzC4C7SJDn.7q2lBNF",
       'action': 'fetchUserServers',
       'type': (serverType == OneConnect.pro) ? "pro" : "free",
     };
